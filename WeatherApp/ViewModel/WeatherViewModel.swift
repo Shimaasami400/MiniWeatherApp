@@ -7,17 +7,19 @@
 
 import Foundation
 import Combine
+import CoreLocation
 
-class WeatherViewModel :ObservableObject{
+class WeatherViewModel :NSObject,ObservableObject{
     @Published var weatherData : WeatherForecastResponse?{
         didSet{
             bindResultToViewController()
         }
     }
     // func fetchWeatherData(latitude: Double, longitude: Double, completion: @escaping (Result<WeatherData, Error>) -> Void) {
-    func fetchWeatherData() {
-            let latitude = 37.7749
-            let longitude = -122.4194
+    //func fetchWeatherData() {
+    func fetchWeatherData(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+//            let latitude = 37.7749
+//            let longitude = -122.4194
             
             let apiKey = "9766e8969476461c875141549241205"
             

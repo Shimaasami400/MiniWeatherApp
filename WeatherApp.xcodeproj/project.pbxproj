@@ -16,6 +16,8 @@
 		D48BDC5A2BF1094900ECD181 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48BDC592BF1094900ECD181 /* Weather.swift */; };
 		D48BDC5E2BF1326C00ECD181 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48BDC5D2BF1326C00ECD181 /* LocationView.swift */; };
 		D48BDC612BF1397C00ECD181 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48BDC602BF1397C00ECD181 /* WeatherViewModel.swift */; };
+		D48BDC652BF289DF00ECD181 /* HourlyForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48BDC642BF289DF00ECD181 /* HourlyForecastView.swift */; };
+		D48BDC672BF28A9500ECD181 /* HourlyForecastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48BDC662BF28A9500ECD181 /* HourlyForecastRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,9 @@
 		D48BDC592BF1094900ECD181 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		D48BDC5D2BF1326C00ECD181 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		D48BDC602BF1397C00ECD181 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		D48BDC632BF23ED000ECD181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D48BDC642BF289DF00ECD181 /* HourlyForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastView.swift; sourceTree = "<group>"; };
+		D48BDC662BF28A9500ECD181 /* HourlyForecastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,7 @@
 		D48BDC402BF0B07F00ECD181 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				D48BDC632BF23ED000ECD181 /* Info.plist */,
 				D48BDC622BF139C100ECD181 /* View */,
 				D48BDC5F2BF1396700ECD181 /* ViewModel */,
 				D48BDC542BF1045700ECD181 /* Model */,
@@ -102,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				D48BDC432BF0B07F00ECD181 /* ContentView.swift */,
+				D48BDC642BF289DF00ECD181 /* HourlyForecastView.swift */,
+				D48BDC662BF28A9500ECD181 /* HourlyForecastRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48BDC652BF289DF00ECD181 /* HourlyForecastView.swift in Sources */,
 				D48BDC4E2BF0B08100ECD181 /* WeatherApp.xcdatamodeld in Sources */,
 				D48BDC4B2BF0B08100ECD181 /* Persistence.swift in Sources */,
 				D48BDC442BF0B07F00ECD181 /* ContentView.swift in Sources */,
@@ -183,6 +192,7 @@
 				D48BDC5E2BF1326C00ECD181 /* LocationView.swift in Sources */,
 				D48BDC612BF1397C00ECD181 /* WeatherViewModel.swift in Sources */,
 				D48BDC422BF0B07F00ECD181 /* WeatherAppApp.swift in Sources */,
+				D48BDC672BF28A9500ECD181 /* HourlyForecastRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,8 +326,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 58V9Z22PUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Show the user location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,8 +357,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeatherApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 58V9Z22PUM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Show the user location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

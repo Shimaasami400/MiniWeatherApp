@@ -147,6 +147,13 @@ struct HourlyForecast: Codable {
     let air_quality: AirQuality?
 }
 
+//struct HourlyForecast: Identifiable, Codable {
+//    var id = UUID()
+//    var time: String
+//    var icon: String
+//    var temperature: Int
+//}
+
 struct WeatherForecastResponse: Codable {
     let location: WeatherLocation
     let current: WeatherCurrent
