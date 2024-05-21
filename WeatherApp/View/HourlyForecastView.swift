@@ -1,31 +1,58 @@
-////
-////  HourlyForecastView.swift
-////  WeatherApp
-////
-////  Created by Shimaa on 13/05/2024.
-////
 //
-//import SwiftUI
+//  HourlyForecastView.swift
+//  WeatherApp
 //
-//struct HourlyForecastView: View {
-//    var hourlyForecast: [HourlyForecast]
+//  Created by Shimaa on 13/05/2024.
 //
-//    var body: some View {
-//        List(hourlyForecast, id: \.time) { hour in
-////            HourlyForecastRow(hour: hour)
-//        }
-//        .navigationTitle("Hourly Forecast")
-//    }
-//}
-//
-//struct HourlyForecastView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let hourlyForecast = [
-//            HourlyForecast(time: "12:00 PM", icon: "sun.max.fill", temperature: 25),
-//            HourlyForecast(time: "1:00 PM", icon: "cloud.sun.fill", temperature: 24),
-//            HourlyForecast(time: "2:00 PM", icon: "cloud.fill", temperature: 23)
-//        ]
-//        return HourlyForecastView(hourlyForecast: hourlyForecast)
-//    }
-//}
-//
+
+import SwiftUI
+
+struct HourlyForecastView: View {
+    var hourlyForecast: [HourlyForecast]
+
+    var body: some View {
+        ZStack {
+            Image(backgroundImage)
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+
+            VStack {
+                Text("Hourly Forecast")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .padding(.top, 50)
+
+                List {
+                    Section {
+                        ForEach(hourlyForecast, id: \.time) { hour in
+                            VStack {
+                                HourlyForecastCell(hour: hour)
+                            }
+                            .listRowBackground(Color.clear.opacity(0.5)) 
+                        }
+                    }
+                }
+                .listStyle(PlainListStyle())
+                .background(Color.clear)
+            }
+        }
+    }
+    
+    private var backgroundImage: String {
+        let hour = Calendar.current.component(.hour, from: Date())
+        return (hour >= 6 && hour < 18) ? "morning" : "evening"
+    }
+}
+
+struct HourlyForecastView_Previews: PreviewProvider {
+    static var previews: some View {
+        let hourlyForecast = [
+            HourlyForecast(time: "12:00 PM", temp_c: Double(Int(20.0)), condition: WeatherCondition(text: "Clear", icon: "", code: 1000)),
+            HourlyForecast(time: "1:00 PM", temp_c: Double(Int(20.0)), condition: WeatherCondition(text: "Clear", icon: "", code: 1000))
+        ]
+        return HourlyForecastView(hourlyForecast: hourlyForecast)
+    }
+}
+
+

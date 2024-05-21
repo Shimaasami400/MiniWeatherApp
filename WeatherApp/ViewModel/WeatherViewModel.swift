@@ -15,8 +15,7 @@ class WeatherViewModel :NSObject,ObservableObject{
             bindResultToViewController()
         }
     }
-    // func fetchWeatherData(latitude: Double, longitude: Double, completion: @escaping (Result<WeatherData, Error>) -> Void) {
-    //func fetchWeatherData() {
+ 
     func fetchWeatherData(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
 //            let latitude = 37.7749
 //            let longitude = -122.4194
@@ -33,7 +32,7 @@ class WeatherViewModel :NSObject,ObservableObject{
                         let decodedData = try JSONDecoder().decode(WeatherForecastResponse.self, from: data)
                         DispatchQueue.main.async {
                             self.weatherData = decodedData
-                            // Print the decoded data
+                           
                             if let weatherData = self.weatherData {
                                 print(weatherData)
                             }

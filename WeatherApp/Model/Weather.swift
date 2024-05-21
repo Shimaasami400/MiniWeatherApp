@@ -109,50 +109,12 @@ struct Astro: Codable {
     let is_sun_up: Int
 }
 
-struct HourlyForecast: Codable {
-    let time_epoch: Int
-    let time: String
-    let temp_c: Double
-    let temp_f: Double
-    let is_day: Int
-    let condition: WeatherCondition
-    let wind_mph: Double
-    let wind_kph: Double
-    let wind_degree: Int
-    let wind_dir: String
-    let pressure_mb: Double
-    let pressure_in: Double
-    let precip_mm: Double
-    let precip_in: Double
-    let snow_cm: Double
-    let humidity: Int
-    let cloud: Int
-    let feelslike_c: Double
-    let feelslike_f: Double
-    let windchill_c: Double
-    let windchill_f: Double
-    let heatindex_c: Double
-    let heatindex_f: Double
-    let dewpoint_c: Double
-    let dewpoint_f: Double
-    let will_it_rain: Int
-    let chance_of_rain: Int
-    let will_it_snow: Int
-    let chance_of_snow: Int
-    let vis_km: Double
-    let vis_miles: Double
-    let gust_mph: Double
-    let gust_kph: Double
-    let uv: Double
-    let air_quality: AirQuality?
-}
 
-//struct HourlyForecast: Identifiable, Codable {
-//    var id = UUID()
-//    var time: String
-//    var icon: String
-//    var temperature: Int
-//}
+struct HourlyForecast:  Codable {
+    var time: String
+    var temp_c: Double
+    var condition: WeatherCondition
+}
 
 struct WeatherForecastResponse: Codable {
     let location: WeatherLocation
