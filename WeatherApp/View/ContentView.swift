@@ -172,6 +172,7 @@ struct SecondSectionView: View {
             }
             .listStyle(PlainListStyle())
             .background(Color.clear)
+            .listRowSeparatorTint(.white)
         }
         .padding(.horizontal)
     }
